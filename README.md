@@ -86,3 +86,35 @@ By focusing on **linked lists** (for dynamic insertion/deletion) and **recursion
 ## Submission
 Once the lab is complete, all tests are passing, and you've pushed the completed code to 
 your forked repo on GitHub, submit your GitHub repo through Canvas using CodeGrade.
+
+---
+
+## How to Run
+
+Requires Python 3.8+.
+
+```bash
+python3 main.py              # demo: build a roster, sum, search, reverse
+python3 -m pytest            # run the test suite (or: python3 -m unittest -v)
+```
+
+### Sample output
+
+```
+Employee ID roster:
+100 -> 101 -> 102 -> 103 -> None
+
+Sum of all IDs: 406
+Is ID 102 on the roster? Yes
+Is ID 999 on the roster? No
+
+Roster after reversing:
+103 -> 102 -> 101 -> 100 -> None
+```
+
+### Interpreting results
+
+- `display()` prints nodes from `head` to the end, with `None` marking the tail.
+- `recursive_sum()` adds each node's value to the sum of the rest of the list (base case: `None` → `0`).
+- `recursive_search(target)` returns `True` on the first match, `False` once it reaches `None`.
+- `recursive_reverse()` flips each node's `next` pointer to the previous node, then sets `head` to the old tail.
